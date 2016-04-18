@@ -1,0 +1,57 @@
+   .loading-wrapper{
+       box-sizing: border-box;
+       height: 85px;
+       width: 85px;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       overflow: hidden;
+       position: relative;
+       z-index: 1;
+   }
+   .loading-obj > div{
+    border-radius: 5px;
+    height: 45px;
+    width: 10px;
+    top: -3px;
+    position: absolute;
+    left: calc(50% - 5px);
+    transform-origin: center bottom;
+   }
+   .loading-obj .e1{
+       background-color: #5454D6;
+       animation: load 4s ease-in infinite 1s;
+   }
+   .loading-obj .e2{
+       background-color: #31AFE2;
+       animation: load 4s ease-in infinite 1.1s;
+   }
+   .loading-obj .e3{
+       background-color: #7AD0F3;
+       animation: load 4s ease-in infinite 1.2s;
+   }
+   .loading-obj .e4{
+       background-color: #D2F1FF;
+       animation: load 4s ease-in infinite 1.3s;
+   }
+   .loading-obj .e5{
+       background-color: #EFFAFF;
+       animation: load 4s ease-in infinite 1.4s;
+   }
+
+   @keyframes load{
+    20%{ width: 30px; left: calc(50% - 15px); }   
+    100% { width: 10px; transform: rotate(360deg);}
+   }
+   
+   .loading-inner-offset{
+       height: 75px;
+       width: 75px;
+       border-radius: 50%;
+       overflow: hidden;
+       z-index: 2;
+       background: #fff;
+   }
+   body,
+   .loading-inner-offset{ background: #000; }
