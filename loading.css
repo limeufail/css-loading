@@ -12,7 +12,7 @@
    }
    .loading-obj > div{
     border-radius: 5px;
-    height: 45px;
+    height: 90px;
     width: 10px;
     top: -3px;
     position: absolute;
@@ -52,6 +52,23 @@
        overflow: hidden;
        z-index: 2;
        background: #fff;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: #96E4F1;
+       font-size: 1.3em;
+   }
+   .countdown-wrapper{
+       height: 25px;
+       overflow: hidden;
+   }
+   .digit-wrapper{
+       display: flex;
+       flex-flow: column nowrap;
+       animation: count 1s ease-in infinite 1.4s;
+   }
+   @keyframes count{
+       100%{ transform: translateY(-215px); }
    }
    body,
    .loading-inner-offset{ background: #000; }
