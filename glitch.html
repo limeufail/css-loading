@@ -1,0 +1,175 @@
+<style>
+body{
+  background: black;
+}
+
+.glitch {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+}
+.glitch span:before, 
+.glitch span:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch span:after {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch span:before {
+  left: -2px;
+  text-shadow: 2px 0 blue;
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+.glitch{ animation: move-count 12s steps(10) infinite; }
+
+@keyframes move-count{
+    100% { transform: translateY(-1150px); }
+}
+
+.wrap {
+  width: 50px;
+  height: 111px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(71px, 50px, 265px, 0);
+  }
+  5.88235% {
+    clip: rect(18px, 50px, 32px, 0);
+  }
+  11.76471% {
+    clip: rect(95px, 50px, -539px, 0);
+  }
+  17.64706% {
+    clip: rect(107px, 50px, 36px, 0);
+  }
+  23.52941% {
+    clip: rect(87px, 50px, 64px, 0);
+  }
+  29.41176% {
+    clip: rect(111px, 50px, 28px, 0);
+  }
+  35.29412% {
+    clip: rect(1px, 50px, 21px, 0);
+  }
+  41.17647% {
+    clip: rect(51px, 50px, 33px, 0);
+  }
+  47.05882% {
+    clip: rect(44px, 50px, 93px, 0);
+  }
+  52.94118% {
+    clip: rect(81px, 50px, 47px, 0);
+  }
+  58.82353% {
+    clip: rect(111px, 50px, 78px, 0);
+  }
+  64.70588% {
+    clip: rect(5px, 50px, 87px, 0);
+  }
+  70.58824% {
+    clip: rect(29px, 50px, 31px, 0);
+  }
+  76.47059% {
+    clip: rect(103px, 50px, 77px, 0);
+  }
+  82.35294% {
+    clip: rect(59px, 50px, 78px, 0);
+  }
+  88.23529% {
+    clip: rect(25px, 50px, 74px, 0);
+  }
+  94.11765% {
+    clip: rect(14px, 50px, 4px, 0);
+  }
+  100% {
+    clip: rect(86px, 50px, 82px, 0);
+  }
+}
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(59px, 50px, 110px, 0);
+  }
+  5.88235% {
+    clip: rect(76px, 50px, 112px, 0);
+  }
+  11.76471% {
+    clip: rect(68px, 50px, 88px, 0);
+  }
+  17.64706% {
+    clip: rect(46px, 50px, 87px, 0);
+  }
+  23.52941% {
+    clip: rect(3px, 50px, 7px, 0);
+  }
+  29.41176% {
+    clip: rect(27px, 50px, 76px, 0);
+  }
+  35.29412% {
+    clip: rect(19px, 50px, 39px, 0);
+  }
+  41.17647% {
+    clip: rect(93px, 50px, 64px, 0);
+  }
+  47.05882% {
+    clip: rect(89px, 50px, 16px, 0);
+  }
+  52.94118% {
+    clip: rect(39px, 50px, 52px, 0);
+  }
+  58.82353% {
+    clip: rect(40px, 50px, 9px, 0);
+  }
+  64.70588% {
+    clip: rect(51px, 50px, 33px, 0);
+  }
+  70.58824% {
+    clip: rect(110px, 50px, 74px, 0);
+  }
+  76.47059% {
+    clip: rect(34px, 50px, 81px, 0);
+  }
+  82.35294% {
+    clip: rect(88px, 50px, 7px, 0);
+  }
+  88.23529% {
+    clip: rect(107px, 50px, 69px, 0);
+  }
+  94.11765% {
+    clip: rect(37px, 50px, 78px, 0);
+  }
+  100% {
+    clip: rect(18px, 50px, 113px, 0);
+  }
+}
+
+</style>
+<div class='wrap'>
+<div class='glitch'>
+    <span class='digit' data-text='0'>0</span>
+    <span class='digit' data-text='1'>1</span>
+    <span class='digit' data-text='2'>2</span>
+    <span class='digit' data-text='3'>3</span>
+    <span class='digit' data-text='4'>4</span>
+    <span class='digit' data-text='5'>5</span>
+    <span class='digit' data-text='6'>6</span>
+    <span class='digit' data-text='7'>7</span>
+    <span class='digit' data-text='8'>8</span>
+    <span class='digit' data-text='9'>9</span>
+</div>
+</div>
