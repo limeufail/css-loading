@@ -1,3 +1,6 @@
+   body,
+   .loading-inner-offset{ background: #000; }
+   
    .loading-wrapper{
        box-sizing: border-box;
        height: 85px;
@@ -10,41 +13,22 @@
        position: relative;
        z-index: 1;
    }
-   .loading-obj > div{
-    border-radius: 5px;
-    height: 50px;
-    width: 10px;
-    top: -3px;
-    position: absolute;
-    left: calc(50% - 5px);
-    transform-origin: center bottom;
-   }
+   
    .loading-obj .e1{
        background-color: #0707EF;
        animation: load 4s ease-in infinite 1s;
        box-shadow: -20px 0 57px 33px blue;
-   }
-   .loading-obj .e2{
-       background-color: #0933C3;
-       animation: load 4s ease-in infinite 1.1s;
-   }
-   .loading-obj .e3{
-       background-color: #7AD0F3;
-       animation: load 4s ease-in infinite 1.2s;
-   }
-   .loading-obj .e4{
-       background-color: #D2F1FF;
-       animation: load 4s ease-in infinite 1.3s;
-   }
-   .loading-obj .e5{
-       background-color: #EFFAFF;
-       animation: load 4s ease-in infinite 1.4s;
-       box-shadow: 1px 1px 33px #9696EF;
+             border-radius: 5px;
+      height: 50px;
+      width: 10px;
+      top: -3px;
+      position: absolute;
+      left: calc(50% - 5px);
    }
 
    @keyframes load{
-    20%{ width: 30px; left: calc(50% - 15px); }   
-    100% { width: 10px; transform: rotate(360deg);}
+      20%{ width: 30px; left: calc(50% - 15px); }   
+      100% { width: 10px; transform: rotate(360deg);}
    }
    
    .loading-inner-offset{
@@ -53,38 +37,60 @@
        border-radius: 50%;
        overflow: hidden;
        z-index: 2;
-       background: #fff;
        display: flex;
        justify-content: center;
        align-items: center;
        color: #96E4F1;
        font-size: 1.3em;
    }
-   body,
-   .loading-inner-offset{ background: #000; }
 
-html, body {  
-    overflow: hidden;  
-    width: 100%;  
-    height: 100%;
-}
-.view {  
-    position: absolute;  
-    top: 0;  
-    left: 0;  
-    right: 0;  
-    bottom: 0;  
-    -webkit-perspective: 400;          
-    perspective: 400;
-}
+  .glitch {
+      width: 375px;
+      font-size: 50px;
+      color: #EDF5AF;
+      position: absolute;
+  }
+  .glitch:before, 
+  .glitch:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: black;
+      clip: rect(0, 0, 0, 0);
+      width: 100%;
+  }
+
+  .glitch:after {
+      left: 2px;
+      text-shadow: -1px 0 red;
+      animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  }
+
+  .glitch:before {
+      left: -2px;
+      text-shadow: 2px 0 blue;
+      animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+
+  .glitch{ animation: move-count 15s steps(10) infinite; }
+
+  .view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-perspective: 400;
+      perspective: 400;
+  }
+  
 .plane {  
     width: 120px;  
     height: 120px;  
     -webkit-transform-style: preserve-3d;          
     transform-style: preserve-3d;
-}
-.plane.main {  
-    position: absolute;  
+        position: absolute;  
     top: 0;  
     left: 0;  
     right: 0;  
@@ -97,15 +103,18 @@ html, body {
     -webkit-animation: rotate 20s infinite linear;
     animation: rotate 20s infinite linear;
 }
+.plane.main {  
 
-.plane.main .circle {  
-    width: 120px;  
-    height: 120px;  
-    position: absolute;  
-    -webkit-transform-style: preserve-3d;          
-    transform-style: preserve-3d;  
-    border-radius: 100%;  
-    box-sizing: border-box;  
+}
+
+.plane.main .circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    /* -webkit-transform-style: preserve-3d; */
+    /* transform-style: preserve-3d; */
+    border-radius: 100%;
+    box-sizing: border-box;
     box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;
 }
 .plane.main .circle:before, 
@@ -189,36 +198,6 @@ html, body {
   overflow: hidden;
 }
 
-.glitch {
-  width: 375px;
-  font-size: 50px;
-  color: white;
-  position: absolute;
-}
-.glitch span:before, 
-.glitch span:after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  clip: rect(0, 0, 0, 0);
-  width: 100%;
-}
-
-.glitch span:after {
-  left: 2px;
-  text-shadow: -1px 0 red;
-  animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.glitch span:before {
-  left: -2px;
-  text-shadow: 2px 0 blue;
-  animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-.glitch{ animation: move-count 15s steps(10) infinite; }
 
 @keyframes move-count{
     100% { transform: translateX(-375px); }
